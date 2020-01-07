@@ -156,14 +156,23 @@ Tomcat是一个servlet容器，其运行机制可参考如下：
 > 先不去管技术细节，对一个servlet容器，它首先要做以下事情：
 >
 > 1:实现Servlet api规范。这是最基础的一个实现，servlet api大部分都是接口规范。如request、response、session、cookie。为了我们应用端能正常使用，容器必须有一套完整实现。
+>
 > 2：启动Socket监听端口，等待http请求。
+>
 > 3：获取http请求，分发请求给不同的协议处理器，如http和https在处理上是不一样的。
+>
 > 4：封装请求，构造HttpServletRequest。把socket获取的用户请求字节流转换成java对象httprequest。构造httpResponse。
+>
 > 5：调用(若未创建，则先加载)servlet，调用init初始化，执行servlet.service()方法。
+>
 > 6：为httpResponse添加header等头部信息。
+>
 > 7：socket回写流，返回满足http协议格式的数据给浏览器。
+>
 > 8：实现JSP语法分析器，JSP标记解释器。JSP servlet实现和渲染引擎。
+>
 > 9：JNDI、JMX等服务实现。容器一般额外提供命名空间服务管理。
+>
 > 10：线程池管理，创建线程池，并为每个请求分配线程。  
 
 
