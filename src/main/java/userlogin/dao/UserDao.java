@@ -17,7 +17,7 @@ import userlogin.domain.User;
  *
  */
 public class UserDao {
-	private String path = "D:/workspace/test/WebAppTest/src/users.xml";//依赖数据文件
+	private String path = "D:/CODING/My_Project/JAVAEE/src/users.xml";//依赖数据文件
 	
 	/**
 	 * 按用户名查询
