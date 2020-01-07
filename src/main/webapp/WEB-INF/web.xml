@@ -1,83 +1,82 @@
 <!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.5//EN"
- "http://java.sun.com/dtd/web-app_2_5.dtd" >
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.5//EN"
+        "http://java.sun.com/dtd/web-app_2_5.dtd" >
 
 <web-app>
-	<display-name>Archetype Created Web Application</display-name>
+    <display-name>Archetype Created Web Application</display-name>
 
-	<!-- javaweb三大组件：servlet -->
-	<servlet>
-		<servlet-name>xxx</servlet-name>
-		<servlet-class>johnson.AServlet</servlet-class>
-		<init-param>
-			<param-name>p1</param-name>
-			<param-value>v1</param-value>
-		</init-param>
-		<init-param>
-			<param-name>p2</param-name>
-			<param-value>v2</param-value>
-		</init-param>
-	</servlet>
+    <!-- javaweb三大组件：servlet -->
+    <servlet>
+        <servlet-name>xxx</servlet-name>
+        <servlet-class>johnson.AServlet</servlet-class>
+        <init-param>
+            <param-name>p1</param-name>
+            <param-value>v1</param-value>
+        </init-param>
+        <init-param>
+            <param-name>p2</param-name>
+            <param-value>v2</param-value>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>userlogin.web.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RegistServlet</servlet-name>
+        <servlet-class>userlogin.web.RegistServlet</servlet-class>
+    </servlet>
 
-	<servlet>
-		<servlet-name>LoginServlet</servlet-name>
-		<servlet-class>userlogin.web.LoginServlet</servlet-class>
-	</servlet>
-	<servlet>
-		<servlet-name>RegistServlet</servlet-name>
-		<servlet-class>userlogin.web.RegistServlet</servlet-class>
-	</servlet>
+    <servlet-mapping>
+        <servlet-name>xxx</servlet-name>
+        <url-pattern>/AServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegistServlet</servlet-name>
+        <url-pattern>/RegistServlet</url-pattern>
+    </servlet-mapping>
 
-	<servlet-mapping>
-		<servlet-name>xxx</servlet-name>
-		<url-pattern>/AServlet</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>LoginServlet</servlet-name>
-		<url-pattern>/LoginServlet</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>RegistServlet</servlet-name>
-		<url-pattern>/RegistServlet</url-pattern>
-	</servlet-mapping>
+    <!-- javaweb三大组件：监听器 -->
+    <servlet>
+        <servlet-name>ListenerServlet</servlet-name>
+        <servlet-class>javaweb.listener.ListenerServlet</servlet-class>
+    </servlet>
 
-	<!-- javaweb三大组件：监听器 -->
-	<servlet>
-		<servlet-name>ListenerServlet</servlet-name>
-		<servlet-class>javaweb.listener.ListenerServlet</servlet-class>
-	</servlet>
+    <servlet-mapping>
+        <servlet-name>ListenerServlet</servlet-name>
+        <url-pattern>/ListenerServlet</url-pattern>
+    </servlet-mapping>
+    <listener>
+        <listener-class>javaweb.listener.MyServletContextListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>javaweb.listener.MyHttpSessionListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>javaweb.listener.MyServletRequestListener</listener-class>
+    </listener>
+    <session-config>
+        <session-timeout>1</session-timeout>
+    </session-config>
 
-	<servlet-mapping>
-		<servlet-name>ListenerServlet</servlet-name>
-		<url-pattern>/ListenerServlet</url-pattern>
-	</servlet-mapping>
-	<listener>
-		<listener-class>javaweb.listener.MyServletContextListener</listener-class>
-	</listener>
-	<listener>
-		<listener-class>javaweb.listener.MyHttpSessionListener</listener-class>
-	</listener>
-	<listener>
-		<listener-class>javaweb.listener.MyServletRequestListener</listener-class>
-	</listener>
-	<session-config>
-		<session-timeout>1</session-timeout>
-	</session-config>
+    <!-- javaweb三大组件：过滤器 -->
+    <!-- <filter> <filter-name>helloFilter</filter-name> <filter-class>javaweb.filter.HelloFilter</filter-class>
+        </filter> <filter-mapping> <filter-name>helloFilter</filter-name> <url-pattern>/index.jsp</url-pattern>
+        </filter-mapping> -->
 
-	<!-- javaweb三大组件：过滤器 -->
-	<!-- <filter> <filter-name>helloFilter</filter-name> <filter-class>javaweb.filter.HelloFilter</filter-class> 
-		</filter> <filter-mapping> <filter-name>helloFilter</filter-name> <url-pattern>/index.jsp</url-pattern> 
-		</filter-mapping> -->
-
-	<!-- ajax -->
-	<servlet>
-		<servlet-name>BServlet</servlet-name>
-		<servlet-class>ajax.BServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>BServlet</servlet-name>
-		<url-pattern>/BServlet</url-pattern>
-	</servlet-mapping>
+    <!-- ajax -->
+    <servlet>
+        <servlet-name>BServlet</servlet-name>
+        <servlet-class>ajax.BServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BServlet</servlet-name>
+        <url-pattern>/BServlet</url-pattern>
+    </servlet-mapping>
 
 
 </web-app>
