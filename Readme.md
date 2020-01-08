@@ -1,17 +1,3 @@
-| 漏洞 URL | http://10.41.1.123:10008/rmps-web/App/app.jsp      |
-| -------- | -------------------------------------------------- |
-| 缺陷描述 | 权限校验机制不完善，导致低权限用户可进行高权限操作 |
-
-
-
-攻击方式：
-
-创建两个账号，登录系统，获取sessionid。
-
-拦截请求报文，替换sessionid。
-
-
-
 [TOC]
 
 # JavaWeb
@@ -133,13 +119,15 @@ public class MyHTTPServer {
 
 -- 线程池工作原理？？
 
-### 从JSP开始
-
-
-
-### 理解Servlet
+### JSP和Servlet
 
 servlet理解为javaweb最核心的部分
+
+**JSP和Servlet分工演示**
+
+<img src="D:\CODING\My_Project\JAVAEE\assets\image-20200107200802299.png" alt="image-20200107200802299" style="zoom:80%;" />![image-20200107200828267](D:\CODING\My_Project\JAVAEE\assets\image-20200107200828267.png)
+
+![image-20200107200828267](D:\CODING\My_Project\JAVAEE\assets\image-20200107200828267.png)
 
 **过滤器&监听器**
 
@@ -218,6 +206,8 @@ Cookie是由服务器创建，然后通过响应发送给客户端的一个键�
 
 
 ### HttpSession
+
+![image-20200107200938947](D:\CODING\My_Project\JAVAEE\assets\image-20200107200938947.png)
 
 
 
