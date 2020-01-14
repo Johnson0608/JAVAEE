@@ -14,7 +14,7 @@ public class HelloFilter implements Filter {
 	@Override
 	public void destroy() {
 		// TODO Auto-generated method stub
-		
+		System.out.println("过滤器销毁！");
 	}
 
 	@Override
@@ -22,13 +22,15 @@ public class HelloFilter implements Filter {
 			ServletResponse paramServletResponse, FilterChain paramFilterChain)
 			throws IOException, ServletException {
 		// TODO Auto-generated method stub
-		System.out.println("Hello Filter");
+		System.out.println("过滤器拦截。。。");
+		paramFilterChain.doFilter(paramServletRequest, paramServletResponse);
+		System.out.println("回来执行doFilter方法。。。");
 	}
 
 	@Override
 	public void init(FilterConfig paramFilterConfig) throws ServletException {
 		// TODO Auto-generated method stub
-		
+		System.out.println("过滤器初始化！");
 	}
 
 }
